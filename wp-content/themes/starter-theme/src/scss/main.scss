@@ -1,0 +1,21 @@
+/*!
+	Theme Name: Starter Theme
+	Theme URI: https://katycampen.com/
+	Description: Starter Theme
+	Version: 1.0.0
+	Author: Katy Campen
+	Author URI: https://katycampen.com/
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+/* BASE STYES */
+html, body {
+	opacity: 1;
+}
+
+@import '_components';
+@import '_templates';
+@import '_footer';
+// @import '_forms';

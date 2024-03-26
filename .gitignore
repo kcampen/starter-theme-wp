@@ -1,0 +1,25 @@
+.DS_Store
+*.log
+wp-content/uploads
+wp-content/themes/starter-theme/node_modules/
+
+# Ignore WP default themes
+wp-content/themes/twenty*
+
+# Ignore WP default plugins
+wp-content/plugins/akismet/
+wp-content/plugins/hello.php
+wp-content/plugins/wp-mailhog-smtp
+
+# Ignore WordFence logs
+/wflogs
+
+/ewww
+
+# Rocket
+/cache
+wp-content/plugins/wp-Rocket
+/wp-rocket-config
+/advanced-cache.php
+
+wp-config.php

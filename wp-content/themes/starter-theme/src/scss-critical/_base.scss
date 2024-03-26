@@ -1,0 +1,259 @@
+/********************************************************/
+/* DEBUGGING */
+/********************************************************/
+#debug-viewport {
+	display: inline-block;
+	position: fixed;
+	z-index: 99999999999;
+	top: 30%;
+	left: 0px;
+	background: rgba(101, 211, 182, .7);
+	color: #333;
+	padding: 20px;
+	text-align: center;
+	pointer-events: none;
+	font-size: 26px;
+	opacity: .5;
+}
+
+/********************************************************/
+/* TYPOGRAPHY */
+/********************************************************/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h1, .h1 {
+	font-size: 38px;
+}
+
+h2, .h2 {
+	font-size: 32px;
+}
+
+h3, .h3 {
+	font-size: 28px;
+}
+
+h4, .h4 {
+	font-size: 24px;
+}
+
+h5, .h5 {
+	font-size: 20px;
+}
+
+h6, .h6 {
+	font-size: 16px;
+}
+
+// WYSIWYG STYLES
+.wysiwyg {
+
+	*:first-child {
+		margin-top: 0px;
+	}
+
+	*:last-child {
+		margin-bottom: 0px;
+	}
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+a {
+	transition: color .2s ease-in-out;
+	color: #000;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+a.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	background: #000;
+	padding: 0px 45px;
+	height: 45px;
+	border: 3px solid #000;
+	transition: all .2s ease-in-out;
+	text-decoration: none !important;
+	font-weight: 700;
+
+	&:hover {
+		background: #fff;
+		color: #000;
+	}
+
+	&.light {
+		background: #fff;
+		color: #000;
+
+		&:hover {
+			background: #000;
+			color: #fff;
+		}
+	}
+}
+
+/********************************************************/
+/* BASE */
+/********************************************************/
+html, body {
+	position: relative;
+	width: 100%;
+	opacity: 0;
+
+	&,
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: antialiased;
+		box-sizing: border-box;
+	}
+
+	@media screen and (max-width: 960px) {
+		overflow-x: hidden;
+	}
+}
+
+.container {
+	max-width: 1176px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: 601px) and (max-width: 1200px) {
+		max-width: 95% !important;
+	}
+
+	@media screen and (max-width: 600px) {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	&.design {
+		max-width: 1456px;
+	}
+
+	&.small {
+		max-width: 900px;
+	}
+}
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/********************************************************/
+/* SPACING */
+/********************************************************/
+body {
+
+	& > section {
+		margin-top: 130px;
+		margin-bottom: 130px;
+		position: relative;
+
+		// first section
+		&:first-of-type {
+			margin-top: 0px;
+			padding-top: 200px;
+
+			@media screen and (max-width: 720px) {
+				padding-top: 180px;
+			}
+		}
+	}
+
+	// breadcrumbs add extra space
+	&.has-breadcrumbs {
+
+		& > section:first-of-type {
+			padding-top: 260px;
+
+			@media screen and (max-width: 720px) {
+				padding-top: 180px;
+			}
+		}
+	}
+
+	// announcement bar add extra space
+	&.has-announcement-bar {
+
+		& > section:first-of-type {
+			padding-top: 290px;
+
+			@media screen and (max-width: 720px) {
+				padding-top: 250px;
+			}
+		}
+	}
+}
+
+/********************************************************/
+/* BREADCRUMBS */
+/********************************************************/
+body.has-announcement-bar .breadcrumbs {
+	top: 170px;
+}
+
+.breadcrumbs {
+	position: absolute;
+	top: 140px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 8;
+
+	@media screen and (max-width: 1200px) {
+		top: 100px;
+	}
+
+	@media screen and (max-width: 960px) {
+		display: none;
+	}
+
+	ul {
+		display: flex;
+		margin: 0px;
+		padding: 0px;
+		list-style-type: none;
+
+		* {
+			font-size: 12px;
+		}
+
+		li {
+			position: relative;
+			padding: 0px;
+			margin: 0px;
+			padding-right: 30px;
+
+			&:not(:first-child)::before {
+				content: '';
+				display: block;
+				position: absolute;
+				pointer-events: none;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 4px;
+				height: 4px;
+				background-color: #000;
+				left: -17px;
+			}
+
+			a {
+				display: block;
+			}
+		}
+	}
+}
